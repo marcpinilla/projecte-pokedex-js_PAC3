@@ -1,0 +1,29 @@
+/* variables */
+:root {
+    /* light */
+    --bg-color-light:#fff;
+    --text-color-light:#222;
+
+    /* dark */
+    --bg-color-dark:#222;
+    --text-color-dark:#eee;
+}
+
+/* light theme */
+body,
+body.light {
+    background-color: var(--bg-color-light);
+    color: var(--text-color-light);
+}
+body.light .bg{
+    background-color: var(--bg-color-light);    
+}
+
+/* dark theme */
+body.dark {
+    background-color: var(--bg-color-dark);
+    color: var(--text-color-dark);
+}
+body.dark .bg{
+    background-color: var(--bg-color-dark);    
+}

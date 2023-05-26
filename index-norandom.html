@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pokédex - Home</title>
+
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/lightdarktheme.css">
+        <script src="assets/js/lightdarktheme.js" defer></script>
+        <script src="assets/js/main-norandom.js" defer></script>
+    </head>
+    <body class="light">
+        <header id="header" class="box-shadow sticky bg">
+            <nav class="navHeader">
+                <a href="index.html" class="home" alt="Home">
+                    <picture class="navHeader__logo">
+                        <img class="navHeader__img" src="assets/img/International_Pokemon_logo.png" alt="home" />
+                    </picture>    
+                </a>
+                <div class="controls">
+                    <span class="pointer">
+                        <label for="radioLight">Light</label>
+                        <input type="radio" name="theme" id="radioLight" value="light" checked>
+                    </span>
+                    <span class="pointer">
+                        <label for="radioDark">Dark</label>
+                        <input type="radio" name="theme" id="radioDark" value="dark"></span>
+                    </span>
+                </div>
+            </nav>
+        </header>
+        <section id="container-main">
+            <img class="decorate" src="assets/img/pokepatern.jpg" alt="">
+            <section class="container">
+                <div class="line">
+                    <section id="cards" class="pokemon__list"></section>
+                    <template id="template">
+                        <article id="" class="pokemon__item card">
+                            <div class="card__wrapper">
+                                <div class="card__face card__face--front bg">
+                                    <figure>
+                                        <img class="pokemon__image--front_default" src="" alt="">
+                                        <figcaption class="text-center">
+                                            <h3 class="pokemon__name">Pikachu</h3>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                                <div class="card__face card__face--back bg">
+                                    <div class="pokemon__more__image">
+                                        <figure>
+                                            <img class="pokemon__image--back_default" src="" alt="">
+                                        </figure>
+                                        <figure>
+                                            <img class="pokemon__image--front_shiny" src="" alt="">
+                                        </figure>
+                                    </div>
+                                    <div class="pokemon__info text-center">
+                                        <p class="pokemon__type">
+                                            Tipus <br>
+                                            <span class="pokemon__tipus--result fw-700"></span>
+                                        </p>
+                                        <p class="pokemon__atac">
+                                            Atac <br>
+                                            <span class="pokemon__atac--result fw-700"></span>
+                                        </p>
+                                        <p class="pokemon__defensa">
+                                            Defensa <br>
+                                            <span class="pokemon__defensa--result fw-700"></span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </template>
+                </div>
+            </section>
+        </section>
+    </body>
+</html>

@@ -1,0 +1,297 @@
+/* Stylesheet for the 'CV Marc Pinilla' */
+
+/* Reset Styles
+***********************/
+html {scroll-behavior: smooth;}
+*,
+*::before,
+*::after {
+	box-sizing:border-box;
+}
+body {font-family: 'Open Sans', sans-serif;font-size: 16px;line-height: 27px;margin:0;padding:0;height:100% !important;position: relative;}
+.container {max-width: 75rem;margin:0 auto;padding:0 15px;}
+
+/* * {
+    box-sizing: border-box;
+    user-select: none;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(#111, #1a1a1a);
+} */
+
+/*initialization*/
+a {color: #000;-webkit-transition: all 0.2s ease-in-out;-moz-transition: all 0.2s ease-in-out;-o-transition: all 0.2s ease-in-out;transition: all 0.2s ease-in-out;}
+a:hover, 
+a:focus {color: #000;}
+img {max-width: 100%;}
+p {margin-top: 0;}
+
+/*Utility*/
+.text-center {text-align: center;}
+.uppercase {text-transform: uppercase;}
+.lowercase {text-transform:inherit !important;}
+.overflow {overflow: hidden;}
+.underline {text-decoration: underline;}
+.italic {font-style: italic;}
+.box-shadow {box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.3);}
+.text-shadow {text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.7);}
+.rounded {border-radius: 50% !important;}
+.rounded-img {height:47px !important;width:47px !important;overflow: hidden;}
+.radius {border-radius: 20px !important;}
+.radius-top {border-radius: 20px 20px 0 0 !important;}
+.radius-bottom {border-radius: 0 0 20px 20px !important;}
+.smallLine{padding:2em 0;}
+.line{padding:4em 0;}
+figure {margin:0;}
+.inline {list-style-type: none;margin:0;padding:0;}
+.inline li {margin:.5rem;display: inline-block;}
+.style-none {list-style-type: none;margin:0;padding:0;}
+.style-none li {border-bottom: 1px solid #ddd;margin-bottom: 1rem;}
+.mb-0 {margin-bottom:0;}
+.sticky {position: sticky;top: 0px;z-index: 1;}
+.pointer {cursor:pointer;}
+.mb-0 {margin-bottom: 0;}
+
+/*titles*/
+h1, h2, h3, h4, h5, h6 {font-family: 'Montserrat', sans-serif;font-weight:700 !important;}
+
+/*font*/
+.montserrat {font-family: 'Montserrat', sans-serif;}
+.opensans {font-family: 'Open Sans', sans-serif;}
+.fw-300 {font-weight:300 !important;}
+.fw-400 {font-weight:400 !important;}
+.fw-500 {font-weight:500 !important;}
+.fw-600 {font-weight:600 !important;}
+.fw-700 {font-weight:700 !important;}
+.fw-900 {font-weight:900 !important;}
+
+/*colors*/
+.black {color: #000;}
+.darkgrey {color:#222;}
+
+/*bg colors*/
+.bg-black {background-color:#000;}
+.bg-darkgrey {background-color:#222222;}
+.bg-cleargrey {background-color:#d9d9d9;}
+.bg-lime {background-color:#dbff00;}
+
+/*buttons*/
+.button {letter-spacing: 0.5px;padding: 0.6em 1em;font-family: 'Montserrat', sans-serif;font-size: 0.95rem;color: #fff;font-weight:700;border: none;background-color: #222;box-shadow: none;cursor: pointer;min-width: 170px;line-height: inherit;border-radius:50px;}
+.button:hover, 
+.button:focus {background-color: #333;border:none;color: #fff;}
+
+/*forms*/
+input::-moz-placeholder,
+textarea::-moz-placeholder {opacity: 0.9 !important;color:#9EC2C7 !important;}
+form *:focus {border:1px solid #ddd !important;}
+[type="text"],
+[type="password"],
+[type="date"],
+[type="datetime"],
+[type="datetime-local"],
+[type="month"],
+[type="week"],
+[type="email"],
+[type="number"],
+[type="search"],
+[type="tel"],
+[type="time"],
+[type="url"],
+[type="color"],
+textarea,
+select {border-radius: 0;box-shadow: none;border-color:#ddd;font-weight: 300;}
+label {font-weight: 300;}
+
+/* decorate */
+.decorate {
+    position: absolute;
+    top:0;
+    left:0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    mix-blend-mode: multiply;
+    filter: grayscale(1);
+}
+body.light .decorate {
+    opacity: 0.1;
+}
+body.dark .decorate {
+    opacity: 0.5;
+}
+
+/* ==========================================================================
+   HEADER
+   ==========================================================================*/
+.navHeader {
+    padding: 1rem;
+    display:flex;
+    align-items: center;
+}
+.navHeader .home {
+    margin-right: auto; 
+}
+.navHeader__logo img {
+    max-width: 114px;
+    max-height: 114px;
+}
+.navHeader a {
+    margin:0 .5rem;
+    text-decoration:none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+.navHeader a:hover,
+.navHeader a.active {
+    color: #dbff00;
+    text-decoration:none;
+}
+
+
+/* ==========================================================================
+   CONTAINER-MAIN
+   ==========================================================================*/
+#container-main {
+    min-height: 100vh;
+}
+
+/* flipcard */
+.card__wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transform-origin: center right;
+    transition: transform 1s;
+    min-height: 350px;
+}
+.card__wrapper.is-flipped {
+    transform: translateX(-100%) rotateY(-180deg);
+}
+.card__face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding:1.5rem;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.card__face--front,
+.card__face--back {
+    border-radius: 15px;
+    box-shadow:0 0 11px 3px rgba(0,0,0,0.3);
+}
+.card__face--back {
+    transform: rotateY(180deg);
+}
+
+/* pokemon__list */
+.pokemon__list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    gap:2rem;
+}
+@media only screen and (min-width: 768px) {
+    .pokemon__list {
+        flex-direction: row;
+    }
+    .pokemon__item {
+        width: 30%;
+    } 
+}
+.pokemon__image--front_default,
+.pokemon__image--back_default,
+.pokemon__image--back_default {
+    aspect-ratio: 8/6;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    max-height: 220px;
+}
+.pokemon__more__image {
+    display: flex;
+    flex-wrap: wrap;
+    gap:15px;
+}
+.pokemon__more__image figure {
+    flex:0 0 46%;
+}
+.pokemon__info {
+    display: flex;
+    flex-direction: row;
+    gap:15px;
+}
+.pokemon__info p {
+    flex: 0 0 28%; 
+}
+
+/* .pokemon__item {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 15px;
+} */
+/* .pokemon__item p,
+.pokemon__item button {
+    margin: 1rem;
+} */
+/* .pokemon__item button {
+    margin-top:auto;
+} */
+/* .pokemon__item figure {
+    margin: 0;
+} */
+
+
+/* contactForm */
+.contactForm {
+    max-width: 600px;
+    width: 100%;
+    margin:0 auto;
+}
+.contactForm .form-item{
+    margin-bottom:1rem;
+}
+.contactForm label{
+    margin-bottom: .7rem;
+    font-weight: 600;
+    color: #222
+}
+.contactForm input[type=text],
+.contactForm input[type=email],
+.contactForm textarea {
+   display: block;
+   width: 100%;
+   border: 1px solid #d9d9d9;
+   padding: 1rem;
+   box-sizing: border-box;
+}
+.contactForm .button {
+   margin-top: 1rem;   
+}
+
+
+/* medias */
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}
